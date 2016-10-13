@@ -11,6 +11,8 @@ function boardScreen() {
     stroke(0);
     fill(0);
     rect(0, 0, 800, 100);
+    textSize(30);
+    text('WoToM', 670, 590);
     textSize(35);
     fill(255);
     text('Tic-Tac-Toe', 100, 70);
