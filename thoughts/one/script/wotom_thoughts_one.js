@@ -95,6 +95,12 @@ var fillSteam = 210;
 var increaseFillSteam = false;
 var fillTV1 = 255;
 var fillTV2 = 240;
+var lineX = 0;
+var lineY = 0;
+var angle = 0;
+var incrementS = 0;
+var incrementM = 0;
+var incrementH = 0;
 function drawBackground() {
     strokeWeight(1);
     
@@ -203,4 +209,45 @@ function drawBackground() {
     vertex(485, 277);
     endShape(CLOSE);
     strokeWeight(1);
+
+
+    // clock
+    fill(150);
+    stroke(0);
+    ellipse(60, 85, 80, 80);
+    fill(255);
+    ellipse(60, 85, 70, 70);
+
+    // text('angle: ' + angle, 150, 30);
+    // text('lineX: ' + lineX, 150, 90);
+    // text('lineY: ' + lineY, 150, 90);
+    // hours
+    angle = 3 * PI / 2 + incrementH;
+    lineX = 60 - 30 * cos(angle);
+    lineY = 85 + 30 * sin(angle);
+    strokeWeight(5);
+    stroke(150);
+    line(60, 85, lineX, lineY);
+
+    // minutes
+    angle = 2 * PI + incrementM;
+    lineX = 60 - 30 * cos(angle);
+    lineY = 85 + 30 * sin(angle);
+    strokeWeight(3);
+    stroke(75);
+    line(60, 85, lineX, lineY);
+
+    // seconds
+    angle = 3 * PI / 2 + incrementS;
+    lineX = 60 - 30 * cos(angle);
+    lineY = 85 + 30 * sin(angle);
+    strokeWeight(1);
+    stroke(0);
+    line(60, 85, lineX, lineY);
+    // 2 * PI / 3600 = PI / 1800
+
+    incrementS = incrementS - PI / 1800;
+    incrementM = incrementS / 60;
+    incrementH = incrementM / 60;
+
 }
