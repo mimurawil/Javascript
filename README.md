@@ -1,3 +1,3 @@
-# This is my repository for Javascript projects.
-
-Created October 12th 2016
+# Javascript Projects
+## William Takashi Mimura
+### Created October 12th 2016
